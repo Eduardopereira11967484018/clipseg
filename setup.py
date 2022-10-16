@@ -10,7 +10,7 @@ requirements = [
     "torch",
     "torchvision",
     "opencv-python",
-    "git+https://github.com/timojl/clipseg.git#egg=clipseg"
+    "git+https://github.com/openai/CLIP.git@main#egg=clip"
 ]
 
 setup(
