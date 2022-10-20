@@ -16,7 +16,7 @@ requirements = [
 setup(
     name='clipseg',
     packages=['clipseg'],
-    package_dir={'clipseg': 'models'},
+    package_dir={'clipseg': 'clipseg_models'},
     package_data={'clipseg': [
         "../weights/*.pth",
     ]},
