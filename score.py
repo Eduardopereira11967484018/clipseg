@@ -324,7 +324,7 @@ def score(config, train_checkpoint_id, train_config):
         from third_party.JoEm.data_loader import get_seen_idx, get_unseen_idx, VOC
         from datasets.pascal_zeroshot import PascalZeroShot, PASCAL_VOC_CLASSES_ZS
 
-        from models.clipseg import CLIPSegMultiLabel
+        from clipseg_models.clipseg import CLIPSegMultiLabel
 
         n_unseen = train_config.remove_classes[1]
 
@@ -390,7 +390,7 @@ def score(config, train_checkpoint_id, train_config):
         elif config.prompt == 'shuffle':
             model.prompt_list = ['a photo of a {}.', 'a photograph of a {}.', 'an image of a {}.', '{}.']
         elif config.prompt == 'shuffle_clip':
-            from models.clip_prompts import imagenet_templates
+            from clipseg_models.clip_prompts import imagenet_templates
             model.prompt_list = imagenet_templates
 
         config.assume_no_unused_keys(exceptions=['max_iterations'])

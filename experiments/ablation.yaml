@@ -6,7 +6,7 @@ configuration:
 
   trainer: experiment_setup.train_loop
   scorer: experiment_setup.score
-  model: models.clipseg.CLIPDensePredT
+  model: clipseg_models.clipseg.CLIPDensePredT
 
   lr_scheduler: cosine
   T_max: 20000

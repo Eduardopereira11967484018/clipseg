@@ -15,7 +15,7 @@ def precompute_clip_vectors():
     all_names = list(lvis.category_names.values())
 
     import clip
-    from models.clip_prompts import imagenet_templates
+    from clipseg_models.clip_prompts import imagenet_templates
     clip_model = clip.load("ViT-B/32", device='cuda', jit=False)[0]
     prompt_vectors = {}
     for name in all_names[:100]:
@@ -44,7 +44,7 @@ def get_prompt_list(prompt):
                             'a cropped photo of a {}.', 'a good photo of a {}.', 'a photo of one {}.',
                             'a bad photo of a {}.', 'a photo of the {}.']
     elif prompt == 'shuffle_clip':
-        from models.clip_prompts import imagenet_templates
+        from clipseg_models.clip_prompts import imagenet_templates
         return imagenet_templates
     else:
         raise ValueError('Invalid value for prompt')        
@@ -537,7 +537,7 @@ class CLIPSegMultiLabel(nn.Module):
 
         self.pascal_classes = VOC
 
-        from models.clipseg import CLIPDensePredT
+        from clipseg_models.clipseg import CLIPDensePredT
         from general_utils import load_model
         # self.clipseg = load_model('rd64-vit16-neg0.2-phrasecut', strict=False)
         self.clipseg = load_model(model, strict=False)

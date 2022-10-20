@@ -197,7 +197,7 @@ class VITDensePredT(VITDenseBase):
                                 'a cropped photo of a {}.', 'a good photo of a {}.', 'a photo of one {}.',
                                 'a bad photo of a {}.', 'a photo of the {}.']
         elif prompt == 'shuffle_clip':
-            from models.clip_prompts import imagenet_templates
+            from clipseg_models.clip_prompts import imagenet_templates
             self.prompt_list = imagenet_templates
 
         if process_cond is not None:

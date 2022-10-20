@@ -6,7 +6,7 @@ configuration:
 
   trainer: experiment_setup.train_loop
   scorer: experiment_setup.score
-  model: models.clipseg.CLIPDensePredT
+  model: clipseg_models.clipseg.CLIPDensePredT
 
   lr_scheduler: cosine
   T_max: 20000
@@ -74,7 +74,7 @@ individual_configurations:
 - {name: rd128-vit16-phrasecut, version: 'ViT-B/16', reduce_dim: 128, mask: text_and_blur3_highlight01}
 - {name: rd64-uni-novis, version: 'ViT-B/16', reduce_dim: 64, with_visual: False, negative_prob: 0.2, mix: False}
 # this was accedentally trained using old mask
-- {name: baseline3-vit16-phrasecut, model: models.clipseg.CLIPDenseBaseline, version: 'ViT-B/16', reduce_dim: 64, reduce2_dim: 64, mask: text_and_blur3_highlight01}
+- {name: baseline3-vit16-phrasecut, model: clipseg_models.clipseg.CLIPDenseBaseline, version: 'ViT-B/16', reduce_dim: 64, reduce2_dim: 64, mask: text_and_blur3_highlight01}
 
-- {name: vit64-uni, version: 'ViT-B/16', model: models.vitseg.VITDensePredT, reduce_dim: 64, with_visual: True, only_visual: True, negative_prob: 0.2, mask: crop_blur_highlight352, lr: 0.0003}
-- {name: vit64-uni-novis, version: 'ViT-B/16', model: models.vitseg.VITDensePredT, with_visual: False, reduce_dim: 64, lr: 0.0001}
+- {name: vit64-uni, version: 'ViT-B/16', model: clipseg_models.vitseg.VITDensePredT, reduce_dim: 64, with_visual: True, only_visual: True, negative_prob: 0.2, mask: crop_blur_highlight352, lr: 0.0003}
+- {name: vit64-uni-novis, version: 'ViT-B/16', model: clipseg_models.vitseg.VITDensePredT, with_visual: False, reduce_dim: 64, lr: 0.0001}
