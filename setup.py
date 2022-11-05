@@ -7,8 +7,8 @@ requirements = [
     "numpy",
     "scipy",
     "matplotlib",
-    "torch",
-    "torchvision",
+#    "torch",
+#    "torchvision",
     "opencv-python",
     "clip",
 ]
